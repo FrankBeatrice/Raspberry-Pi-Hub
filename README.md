@@ -1,6 +1,6 @@
 # Raspberry-Pi-Hub    ![alt tag](https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png=height 40) ![alt tag](https://www.techandme.se/wp-content/uploads/2015/12/download.png) 
 
-<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png" alt="Raspberry pi logo" style="width:304px;height:228px;">
 
 Project: Raspberry Pi Project Database
 This project will focus on the software and hardware integration of RBP. Our web app is being developed to tackle pressing issues emerging developers face as well as anyone with a passion.
