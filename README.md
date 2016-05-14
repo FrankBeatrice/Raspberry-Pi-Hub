@@ -1,5 +1,5 @@
 # Raspberry-Pi-Hub    
-![alt text](https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png=250x250 "Logo Title Text 1")
+![image](https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png=250x250)
 
 <img src="" alt="Raspberry pi logo" style="width:50px;height:50px;">
 
