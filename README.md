@@ -1,4 +1,4 @@
-# Raspberry-Pi-Hub<br></br><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png" alt="Raspberry pi logo" width="100px" height="100px">
+# Raspberry-Pi-Hub<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png" alt="Raspberry pi logo" width="100px" height="100px">
 
 Project: Raspberry Pi Project Database
 This project will focus on the software and hardware integration of RBP. Our web app is being developed to tackle pressing issues emerging developers face as well as anyone with a passion.
