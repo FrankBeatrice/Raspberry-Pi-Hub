@@ -1,5 +1,4 @@
 # Raspberry-Pi-Hub    
-![image](https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png)
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/948px-Raspberry_Pi_Logo.svg.png" alt="Raspberry pi logo" width="50px" height="50px">
 
