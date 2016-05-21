@@ -9,7 +9,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Smak -Free Single page html template by GraphBerry</title>
+	<title>Pi Base -Free Single page html template by GraphBerry</title>
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
@@ -37,11 +37,27 @@
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
-					<a class="navbar-brand animate" href="#"><img src="img/logo.png" alt="logo1"></a>
+					<a class="navbar-brand animate" href="#"><img src="img/Raspberry_Pi_Logo.png" alt="logo1"></a>
+					<h1> "Pi-Base"</h1>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right animate">
-						<li><a href="#home">Home</a></li>
+						<!-- this is the sign_in.handlebars file inside the users folder of the views folder views/users/sign_in.handlebars -->
+                            <form class="create-update-form" action="/users/login" method="POST">
+                                <!-- <div class="form-group"> -->
+                                <label for="em">Email:</label>
+                                <input type="text" id="em" name="email">
+                                <!-- </div> -->
+                                <!-- <div class="form-group"> -->
+                                <label for="pass">Password:</label>
+                                <input type="password" id="pass" name="password">
+                                <!--</div>-->
+                                <button type="submit">Sign In</button>
+                            </form>
+
+
+
+					    <li><a href="#home">Home</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#meetups">Meetups</a></li>
 						<li><a href="#about">About</a></li>
@@ -58,15 +74,15 @@
 				<div class="container">
 					<ul class="text-slider clearfix">
 						<li class="clearfix">
-							<span class="lead">Branding have another definition</span>
+							<span class="lead">Welcome to the BASE</span>
 							<a href="http://graphberry.com/item/smak-one-page-web-template" class="btn btn-primary outline-outward">Get it</a>
 						</li>
 						<li class="clearfix">
-							<span class="lead">Branding have another definition</span>
+							<span class="lead">CHECK OUT OUR TUTORIALS</span>
 							<a href="http://graphberry.com/item/smak-one-page-web-template" class="btn btn-primary outline-outward">Get it</a>
 						</li>
 						<li class="clearfix">
-							<span class="lead">Branding have another definition</span>
+							<span class="lead">BUILD, FORGE, MEND ... NEVER END</span>
 							<a href="http://graphberry.com/item/smak-one-page-web-template" class="btn btn-primary outline-outward">Get it</a>
 						</li>
 					</ul>
@@ -85,10 +101,10 @@
 		<section id="services" class="gray">
 			<div class="container pad-bot-50">
 				<div class="heading">
-					<div>Our services</div>
+					<div>Our Pi-Based World</div>
 					<h1>What we love to do</h1>
 					<div class="divider"><span></span></div>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+					<p>We love to bulid , we love to code and we love to inspire... Check out some projects,create some stuff, be a  developer be a c.</p>
 				</div>
 				<div class="row">
 					<div class="col-sm-3">
@@ -101,14 +117,14 @@
 					<div class="col-sm-3">
 						<div class="service-item fadeInUp">
 							<div class="circle circle-l"><i class="fa fa-pencil fa-3x"></i></div>
-							<h3>Graphic design</h3>
+							<h3> Project design</h3>
 							<p class="font-m">Lorem ipsum dolor sit amet, consectetuer adipiscing elits</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="service-item fadeInDown">
 							<div class="circle circle-l"><i class="fa fa-camera fa-3x"></i></div>
-							<h3>Photography</h3>
+							<h3>Progression Photography Progress</h3>
 							<p class="font-m">Lorem ipsum dolor sit amet, consectetuer adipiscing elits</p>
 						</div>
 					</div>
@@ -181,6 +197,8 @@
 				<div class="heading">
 					<div>Meet with like-minded individuals</div>
 					<h1>Meetups</h1>
+					<div>Our Projects</div>
+					<h1>What we done so far</h1>
 					<div class="divider"><span></span></div>
 					<input type="text" placeholder="search"><input type="button" value="Search" onclick="">
 				</div>
@@ -193,13 +211,13 @@
 							<a href="javascript:void(0)">Web design</a>
 						</li>
 						<li class="filter" data-filter="g-design">
-							<a href="javascript:void(0)">Graphic design</a>
+							<a href="javascript:void(0)">PI PROJECTS</a>
 						</li>
 						<li class="filter" data-filter="photography">
-							<a href="javascript:void(0)">Photography</a>
+							<a href="javascript:void(0)">Photography of PROGRESS</a>
 						</li>
 						<li class="filter" data-filter="illustraion">
-							<a href="javascript:void(0)">Illustration</a>
+							<a href="javascript:void(0)"> GAME HUB</a>
 						</li>
 					</ul>
 				</div>
@@ -351,7 +369,7 @@
 							<div class="col-md-3">
 								<div class="number-item">
 									<span class="number" id="clientsCounter" data-count="1600" data-duration="2">1600</span>
-									<span class="text">Happy clients</span>
+									<span class="text">Happy Developers</span>
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -368,7 +386,8 @@
 							</div>
 							<div class="col-md-3">
 								<div class="number-item">
-									<span class="number" id="coffeeCounter" data-count="20000" data-duration="3">20 000</span>
+									<span class="number" id="coffe
+eCounter" data-count="20000" data-duration="3">20 000</span>
 									<span class="text">Coffee drinks</span>
 								</div>
 							</div>
