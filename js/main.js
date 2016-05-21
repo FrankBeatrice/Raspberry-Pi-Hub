@@ -252,9 +252,17 @@ window.onload = function() {
 	setTimeout(function(){
 		$('.loader').remove();
 	}, 2000)
-
+ 
+populateMeetUps();
  
 };
+
+//Populate meetups
+function populateMeetUps(){
+	var meetUpService = new MeetUpService(null);
+	meetUpService.getMeetUps();
+}
+
 //What happen on window resize
 $(window).resize(function () {
 	homeFullScreen();
