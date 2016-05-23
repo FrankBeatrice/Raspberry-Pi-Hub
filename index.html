@@ -197,28 +197,27 @@
 				<div class="heading">
 					<div>Meet with like-minded individuals</div>
 					<h1>Meetups</h1>
-					<div>Our Projects</div>
-					<h1>What we done so far</h1>
 					<div class="divider"><span></span></div>
-					<input type="text" placeholder="search"><input type="button" value="Search" onclick="">
+					<input id="zip" type="text" placeholder='What is your location, "07302"' style="width: 200px;"><input type="button" value="Enter" onclick="">
 				</div>
+
 				<div class="centered-pills">
 					<ul class="nav nav-pills">
 						<li class="filter" data-filter="all">
-							<a href="javascript:void(0)">All</a>
+							<a href="javascript:populateMeetUps()">All</a>
 						</li>
 						<li class="filter" data-filter="web-design">
-							<a href="javascript:void(0)">Web design</a>
+							<a href="javascript:populateMeetUps('tech')">Tech</a>
 						</li>
 						<li class="filter" data-filter="g-design">
-							<a href="javascript:void(0)">PI PROJECTS</a>
+							<a href="javascript:populateMeetUps('raspberry pi')">Raspberry Pi</a>
 						</li>
 						<li class="filter" data-filter="photography">
-							<a href="javascript:void(0)">Photography of PROGRESS</a>
+							<a href="javascript:populateMeetUps('games')">Games</a>
 						</li>
-						<li class="filter" data-filter="illustraion">
+						<!-- <li class="filter" data-filter="illustraion">
 							<a href="javascript:void(0)"> GAME HUB</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -227,7 +226,7 @@
 			</div>
 			<div>
 				<ul class="full-meetups clearfix" id="Grid">
-					<li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 meetups-item web-design">
+					<!-- <li class="mix col-xs-6 col-sm-4 col-md-3 col-lg-2 meetups-item web-design">
 						<a href="ajax/project-1.html">
 							<img src="img/meetups/placeholder.png" class="img-responsive" alt="">
 							<div class="mask">
@@ -346,7 +345,7 @@
 								<p class="font-m">PSD</p>
 							</div>
 						</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 <!-- 			<div class="container">
