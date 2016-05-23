@@ -253,6 +253,8 @@ window.onload = function() {
 		$('.loader').remove();
 	}, 2000)
 
+//This where we're calling the map
+	mapService.initMap();
  
 };
 //What happen on window resize
