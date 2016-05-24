@@ -264,7 +264,7 @@ function populateMeetUps(search){
 		text: search,
 		zip: "07302"
 	}).then(function(res){
-		$('full-meetups').empty();
+		$('.full-meetups').empty();
 		for (var i = 0; i<res.length; i++){
 			generateTile(res[i]);
 		}
