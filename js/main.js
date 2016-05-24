@@ -252,9 +252,38 @@ window.onload = function() {
 	setTimeout(function(){
 		$('.loader').remove();
 	}, 2000)
-
+ 
+populateMeetUps();
  
 };
+
+//Populate meetups
+function populateMeetUps(search){
+	var meetUpService = new MeetUpService(null);
+	meetUpService.getMeetUps({
+		text: search,
+		zip: "07302"
+	}).then(function(res){
+		$('.full-meetups').empty();
+		for (var i = 0; i<res.length; i++){
+			generateTile(res[i]);
+		}
+	});
+}
+
+//Generate tile for meetups
+function generateTile(meetUpObject){
+	var li = $("<li>");
+	var a = $("<a>");
+	var img = $("<img>");
+
+	a.text(meetUpObject.name);
+	li.append(a);
+	$('.full-meetups').append(li);
+    // img.src = meetUpObject;
+
+}
+
 //What happen on window resize
 $(window).resize(function () {
 	homeFullScreen();
