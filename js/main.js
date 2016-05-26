@@ -273,12 +273,27 @@ function populateMeetUps(search){
 
 //Generate tile for meetups
 function generateTile(meetUpObject){
-	var li = $("<li>");
+	var li = $("<li style='font-size:xx-large'>");
 	var a = $("<a>");
-	var img = $("<img>");
+	
+	//var description = meetUpObject.phone+" Address: "+ meetUpObject.address_1+"<br>"+meetUpObject.address_2+"<br>"+meetUpObject.city+", "+meetUpObject.state+" "+meetUpObject.zip;
+
+	//var description = meetUpObject.lon+", "+meetUpObject.lat;
+
+	//var map = '<br><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?ll='+meetUpObject.lat+','+meetUpObject.lon+'&spn=0.040679,0.07699&z=14&output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?ll='+meetUpObject.lat+','+meetUpObject.lon+'&spn=0.040679,0.07699&z=14&source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small><br>'
+
+	var map = '<br><div style="height:400px;width:400px;max-width:100%;list-style:none; transition: none;overflow:hidden;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q='+meetUpObject.lat+','+meetUpObject.lon+'&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><style>#google-maps-display img{max-width:none!important;background:none!important;}</style></div><br>';
+
+
+	// alert(meetUpObject.description);
 
 	a.text(meetUpObject.name);
+	a.attr("href", meetUpObject.event);
+	a.attr("target", "_blank");
+
+
 	li.append(a);
+	li.append(map);
 	$('.full-meetups').append(li);
     // img.src = meetUpObject;
 
