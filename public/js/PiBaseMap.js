@@ -37,19 +37,7 @@ var PiBaseMap = function(container){
 
       infoWindow = new google.maps.InfoWindow();
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
       map.setCenter(pos);
-
-      var request = {
-        location: pos,
-        radius: '10000',
-        name: ['raspberry pi']
-      };
-
-
-      //service = new google.maps.places.PlacesService(map);
-      //service.nearbySearch(request, callback);
 
       promise.resolve();
 
@@ -102,6 +90,13 @@ this.addPoint=function(point){
     var marker = new google.maps.Marker({
       position:pos,
       title:point.title
+          });
+
+    marker.info = point.description;
+
+   marker.addListener('click', function() {
+      infoWindow.setContent(point.title);
+      //infoWindow.open(map,marker);
     });
 
     marker.setMap(map);

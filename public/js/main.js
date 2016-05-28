@@ -292,7 +292,8 @@ function populateMeetUps(search){
 		location:{
 			lat:res[i].lat,
 			lng:res[i].lon
-		}
+		},
+		info:res[i].description
 	});
 }
 });
