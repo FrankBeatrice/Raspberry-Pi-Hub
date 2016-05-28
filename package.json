@@ -1,0 +1,26 @@
+{
+  "name": "raspberry-pi-hub",
+  "version": "1.0.0",
+  "description": "Project: Raspberry Pi Project Database This project will focus on the software and hardware integration of RBP. Our web app is being developed to tackle pressing issues emerging developers face as well as anyone with a passion.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankBeatrice/Raspberry-Pi-Hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrankBeatrice/Raspberry-Pi-Hub/issues"
+  },
+  "homepage": "https://github.com/FrankBeatrice/Raspberry-Pi-Hub#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6"
+  }
+}
