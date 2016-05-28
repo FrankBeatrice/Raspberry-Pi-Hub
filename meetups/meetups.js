@@ -36,7 +36,17 @@ var MeetUpService = function(){
         	for (var i = 0; i < limit; i++) {
             
             	var meetUpObject = {
-            		name: results[i].name
+            		name: results[i].name,
+            		//phone: results[i].venue.phone,
+            		event: results[i].event_url,
+            		//address_1: results[i].venue.address_1,
+            		//address_2: results[i].venue.address_2,
+            		//city: results[i].venue.city,
+            		//state: results[i].venue.state,
+            		//zip: results[i].venue.zip,
+            		lat: results[i].group.group_lat,
+            		lon: results[i].group.group_lon
+
             	};
 
             	meetUps.push(meetUpObject);
