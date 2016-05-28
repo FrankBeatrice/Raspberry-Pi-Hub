@@ -22,6 +22,7 @@ var PiBaseMap = function(container){
   
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
+        
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
@@ -30,14 +31,14 @@ var PiBaseMap = function(container){
       // var loc = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 
       map = new google.maps.Map(document.getElementById(container), {
-          // center: {lat: -34.397, lng: 150.644},
           center: pos,
-          zoom: 6
+          zoom: 11
         });
+
       infoWindow = new google.maps.InfoWindow();
 
-      // infoWindow.setPosition(pos);
-      // infoWindow.setContent('Location found.');
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
       map.setCenter(pos);
 
       var request = {
