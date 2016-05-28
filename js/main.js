@@ -255,10 +255,12 @@ window.onload = function() {
  
 populateMeetUps();
 
+var meetupsMap = new PiBaseMap('meetups-map');
+
 //Prevents entire page from refreshing
 $(".meetups-form").on("submit",function(event){
 	var linkText = $('#meetUpsList a[data-isSelected=true]').text();
-	populateMeetUps(link);
+	populateMeetUps(linkText);
 	return false;
 });
  

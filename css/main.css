@@ -1338,3 +1338,8 @@ RESPONSIVE
 .thumb-wrap{
 	margin-bottom: 50px;
 }
+
+
+.meetups-list li {
+	width:200px;
+}

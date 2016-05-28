@@ -344,10 +344,10 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$twitter = $('<a href="" class="social"><i class="fa fa-twitter"></i></a>');
-			this.$facebook = $('<a href="" class="social"><i class="fa fa-facebook"></i></a>');
+			this.$github = $('<a href="" class="social"><i class="fa fa-github"></i></a>');
+			this.$linkedin = $('<a href="" class="social"><i class="fa fa-linkedin"></i></a>');
 			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$twitter, this.$facebook);
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$github, this.$linkedin);
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -387,14 +387,14 @@ var Grid = (function() {
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' ),
-					twitter: $itemEl.data('twitter'),
-					facebook: $itemEl.data('facebook')
+					github: $itemEl.data('github'),
+					linkedin: $itemEl.data('linkedin')
 				};
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$twitter.attr('href', 'https://twitter.com/'+eldata.twitter);
-			this.$facebook.attr('href', 'https://www.facebook.com/'+eldata.facebook);
+			this.$github.attr('href', 'https://github.com/'+eldata.github);
+			this.$linkedin.attr('href', 'https://www.linkedin.com/'+eldata.linkedin);
 			this.$href.attr( 'href', eldata.href );
 
 			var self = this;

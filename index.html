@@ -226,8 +226,11 @@
 				<div id="single-project"></div>
 			</div>
 			<div>
-				<ul class="full-meetups clearfix" id="Grid">
+				<ul class="full-meetups clearfix" style="display: inline-block;;width:50%;height:400px;float: left;" id="Grid">
 				</ul>
+
+				<div id="meetups-map" style="width:50%;height:400px;display: inline-block;border:1px solid lightgray;"></div>
+
 			</div>
 			<div class="branded-section numbers">
 				<div class="masked">
@@ -324,19 +327,19 @@ eCounter" data-count="20000" data-duration="3">20 000</span>
 					<div class="row">
 						<ul class="team " id="og-grid">
 							<li class="col-md-3">
-								<a href="" class="team-member" data-title="Frank Beatrice" data-description="Dreamer and passionate about all things PI." data-github="Github" data-linkedIn="LinkedIn">
+								<a href="" class="team-member" data-title="Frank Beatrice" data-description="Dreamer and passionate about all things PI." data-github="github" data-linkedin="linkedin">
 									<img src="img/Team/frankie.jpg" alt="" class="img-responsive">
 									<span class="name">Frank Beatrice</span>
 								</a>
 							</li>
 							<li class="col-md-3">
-								<a href="sdd" class="team-member" data-title="Karina Arevalo" data-description="Traveler, adventurer; master of maps" data-twitter="GraphBerry" data-facebook="facebook">
+								<a href="sdd" class="team-member" data-title="Karina Arevalo" data-description="Traveler, adventurer; master of maps" data-github="github" data-linkedin="linkedin">
 									<img src="img/Team/karina.jpg" alt="" class="img-responsive">
 									<span class="name">Karina Arevalo</span>
 								</a>
 							</li>
 							<li class="col-md-3">
-								<a href="#" class="team-member" data-title="Nicole Brower" data-description="Social butterfly; tech meet ups are my thing." data-twitter="ceca" data-facebook="facebook">
+								<a href="#" class="team-member" data-title="Nicole Brower" data-description="Social butterfly; tech meet ups are my thing." data-github="github" data-linkedin="linkedin">
 									<img src="img/Team/nicole.jpg" alt=""  class="img-responsive">
 									<span class="name">Nicole Brower</span>
 								</a>
@@ -546,6 +549,7 @@ eCounter" data-count="20000" data-duration="3">20 000</span>
 	<script type="text/javascript" src="meetups/meetups.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script src="js/grid.js"></script>
+	<script type="text/javascript" src="js/PiBaseMap.js"></script>
 	<script>
 	$(function() {
 		Grid.init();
