@@ -52,7 +52,8 @@ var MeetUpService = function(){
             		//state: results[i].venue.state,
             		//zip: results[i].venue.zip,
             		lat: results[i].group.group_lat,
-            		lon: results[i].group.group_lon
+            		lon: results[i].group.group_lon,
+                  description: results[i].description
 
             	};
 
