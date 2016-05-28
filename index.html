@@ -199,22 +199,22 @@
 					<div>Meet with like-minded individuals</div>
 					<h1>Meetups</h1>
 					<div class="divider"><span></span></div>
-					<input id="zip" type="text" placeholder='What is your location, "07302"' style="width: 200px;"><input type="button" value="Enter" onclick="">
+					<form class="meetups-form"><input id="zip" type="text" placeholder='What is your location, "07302"' style="width: 200px;"><input type="submit" value="Enter"></form>
 				</div>
 
 				<div class="centered-pills">
-					<ul class="nav nav-pills">
+					<ul id="meetUpsList" class="nav nav-pills">
 						<li class="filter" data-filter="all">
-							<a href="javascript:populateMeetUps()">All</a>
+							<a data-isSelected="true" onclick="selectMeetUpsLink(this)">All</a>
 						</li>
 						<li class="filter" data-filter="web-design">
-							<a href="javascript:populateMeetUps('tech')">Tech</a>
+							<a data-isSelected="false" onclick="selectMeetUpsLink(this)">Tech</a>
 						</li>
 						<li class="filter" data-filter="g-design">
-							<a href="javascript:populateMeetUps('raspberry pi')">Raspberry Pi</a>
+							<a data-isSelected="false" onclick="selectMeetUpsLink(this)">Raspberry Pi</a>
 						</li>
 						<li class="filter" data-filter="photography">
-							<a href="javascript:populateMeetUps('games')">Games</a>
+							<a data-isSelected="false" onclick="selectMeetUpsLink(this)">Games</a>
 						</li>
 						<!-- <li class="filter" data-filter="illustraion">
 							<a href="javascript:void(0)"> GAME HUB</a>

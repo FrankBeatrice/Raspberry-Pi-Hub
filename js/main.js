@@ -254,15 +254,29 @@ window.onload = function() {
 	}, 2000)
  
 populateMeetUps();
+
+//Prevents entire page from refreshing
+$(".meetups-form").on("submit",function(event){
+	var linkText = $('#meetUpsList a[data-isSelected=true]').text();
+	populateMeetUps(link);
+	return false;
+});
  
 };
+
+//Selecting a meetups link
+function selectMeetUpsLink(link){
+	$('#meetUpsList a').data('isSelected', 'false');
+	$(link).data('isSelected', 'true');
+	populateMeetUps($(link).text());
+}
 
 //Populate meetups
 function populateMeetUps(search){
 	var meetUpService = new MeetUpService(null);
 	meetUpService.getMeetUps({
 		text: search,
-		zip: "07302"
+		zip: $('#zip').val()
 	}).then(function(res){
 		$('.full-meetups').empty();
 		for (var i = 0; i<res.length; i++){
@@ -273,7 +287,7 @@ function populateMeetUps(search){
 
 //Generate tile for meetups
 function generateTile(meetUpObject){
-	var li = $("<li style='font-size:xx-large'>");
+	var li = $("<li>");
 	var a = $("<a>");
 	
 	//var description = meetUpObject.phone+" Address: "+ meetUpObject.address_1+"<br>"+meetUpObject.address_2+"<br>"+meetUpObject.city+", "+meetUpObject.state+" "+meetUpObject.zip;
@@ -282,7 +296,7 @@ function generateTile(meetUpObject){
 
 	//var map = '<br><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?ll='+meetUpObject.lat+','+meetUpObject.lon+'&spn=0.040679,0.07699&z=14&output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?ll='+meetUpObject.lat+','+meetUpObject.lon+'&spn=0.040679,0.07699&z=14&source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small><br>'
 
-	var map = '<br><div style="height:400px;width:400px;max-width:100%;list-style:none; transition: none;overflow:hidden;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q='+meetUpObject.lat+','+meetUpObject.lon+'&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><style>#google-maps-display img{max-width:none!important;background:none!important;}</style></div><br>';
+	//var map = '<br><div style="height:300px;width:400px;max-width:100%;list-style:none; transition: none;overflow:hidden;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q='+meetUpObject.lat+','+meetUpObject.lon+'&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><style>#google-maps-display img{max-width:none!important;background:none!important;}</style></div><br>';
 
 
 	// alert(meetUpObject.description);
@@ -293,7 +307,7 @@ function generateTile(meetUpObject){
 
 
 	li.append(a);
-	li.append(map);
+	//li.append(map);
 	$('.full-meetups').append(li);
     // img.src = meetUpObject;
 
