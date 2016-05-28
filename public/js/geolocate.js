@@ -1,64 +1,59 @@
-var service;
-var infowindow;
-var map;
-// var places = [
-//         {
-//           name: "adafruit",
-//           address: "150 Varick Street, New York, NY 10013",
-//           lat: 40.72601909999999,
-//           long: -74.00536,
-//         },
-//         {
-//           name: "tinkersphere",
-//           address: "304 East 5th Street, New York, NY 10003",
-//           lat:  40.7263943,
-//           long: -73.98856080000002,
-//         },
-//         {
-//           name: "nycresistor",
-//           address: "87 3rd Avenue, 4th Floor, Brooklyn, NY 11217",
-//           lat: 40.6836146,
-//           long: -73.98167289999998,
-//         }
-//       ]
-      function initMap() {
-        
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+
+
+var PiBaseMap = function(container){
+
+  var map;
+  var service;
+  var infoWindow;
+  
+
+  function init() {
+
+      PiBaseMap.loadApi().then(function(){
+        initMap();
+});
+  }
+
+
+
+  function initMap() {
+  
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
 
       // var loc = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 
-map = new google.maps.Map(document.getElementById('googleMap'), {
+      map = new google.maps.Map(document.getElementById(container), {
           // center: {lat: -34.397, lng: 150.644},
           center: pos,
           zoom: 6
         });
-    infoWindow = new google.maps.InfoWindow();
-    
+      infoWindow = new google.maps.InfoWindow();
+
       // infoWindow.setPosition(pos);
       // infoWindow.setContent('Location found.');
       map.setCenter(pos);
 
-var request = {
-    location: pos,
-    radius: '10000',
-    name: ['raspberry pi']
-  };
-  
+      var request = {
+        location: pos,
+        radius: '10000',
+        name: ['raspberry pi']
+      };
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
 
 
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
-  } else {
+    } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
@@ -67,32 +62,10 @@ var request = {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
+    'Error: The Geolocation service failed.' :
+    'Error: Your browser doesn\'t support geolocation.');
 }
 
-            
-// var map;
-// var service;
-// var infowindow;
-
-// function initialize() {
-//   var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-
-//   map = new google.maps.Map(document.getElementById('map'), {
-//       center: pyrmont,
-//       zoom: 15
-//     });
-
-//   var request = {
-//     location: pyrmont,
-//     radius: '500',
-//     types: ['store']
-//   };
-
-//   service = new google.maps.places.PlacesService(map);
-//   service.nearbySearch(request, callback);
-// }
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -111,40 +84,52 @@ function createMarker(place) {
     icon: '../img/Raspberry_Pi_map_marker.png'
   });
 
+  debugger;
+
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
 }
 
+// this.addPont(point){
 
-// // function initMarkers(){
-//    //create markers
-//    var marker = new google.maps.Marker();
+//{
 
-//    google.maps.event.addListener(marker, 'click', openInfoWindow(marker, i));
-// }
+init();
 
-// var infowindow = new google.maps.InfoWindow();
-// function openInfoWindow(marker,index){
-//          return function(e) {
+};
 
-//             //Close other info window if one is open
-//             if (infowindow) {
-//                 infowindow.close();
-//             }
+PiBaseMap.promise = null;
 
-//             var content = marker.offer.text;
+PiBaseMap.loadApi = function(){
 
-//             infowindow.setContent(content);
+    if(PiBaseMap.promise !== null)
+      return PiBaseMap.promise;
 
-//             setTimeout(function() {
-//                 infowindow.open(map, marker);
-//             }, 200);
-//         }
-// }
+      var url = "https://maps.googleapis.com/";
+  var uri = "maps/api/js";
+  var apiKey = "AIzaSyC7H15nLRAnl2kb_3Ac1oFg8bQfnZF8u0I";
+  var loadCallback = "apiLoaded";
+
+    PiBaseMap.promise = $.Deferred();
+
+    var apiUrl = url + uri + "?" +
+                  "key=" + apiKey +
+                  "&library=places" +
+                  "&callback=" + loadCallback;
+    var script = document.createElement('script');
+    script.src = apiUrl;
+    $("body").append(script);
+
+    return PiBaseMap.promise;
+}
 
 
+   window.apiLoaded = function() {
 
-      initMap();
+      PiBaseMap.promise.resolve();
+  }
+
+
 

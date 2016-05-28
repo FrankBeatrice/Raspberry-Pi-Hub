@@ -239,6 +239,18 @@ function openProject() {
 	});
 }
 
+
+function purchaseMap(){
+
+	var buyPi = new PiBaseMap('googleMap');
+	var buyPi2 = new PiBaseMap('googleMap2');
+
+
+}
+
+	
+
+
 //Initialization
 openProject();
 homeFullScreen();
@@ -251,12 +263,9 @@ window.onload = function() {
  $('.loader').addClass('removing');
 	setTimeout(function(){
 		$('.loader').remove();
-	}, 2000)
+	}, 2000);
 
-//This where we're calling the map
-	// mapService.initMap();
-	// initMap();
- 
+	purchaseMap();
 };
 //What happen on window resize
 $(window).resize(function () {

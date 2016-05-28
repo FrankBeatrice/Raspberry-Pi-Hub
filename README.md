@@ -5,9 +5,9 @@ This project will focus on the software and hardware integration of RBP. Our web
 
 Our site takes a main focus as a development power house where software developers can be creative, have fun , inspire others, contribute to others and show off their skills.
 
-The site will has three key segments
+The site will has three key segments:
 
-•  A page where html5-javascript-node.js based games can be dowloaded , tested and compared to other projects. [It’s useful to anyone on the web that wants to play a cool game…it’s useful to prospective employers and dev teams to examine the mindset of a new member in mentality,methodology and creativity.
+•  A page where html5, javascript, and node.js based games can be dowloaded, tested and compared to other projects. [It’s useful to anyone on the web that wants to play a cool game… It’s useful to prospective employers and dev teams to examine the mindset of a new member in mentality,methodology and creativity.
 
 • A segment where projects ideas can be uploaded and shared from multiple social media outlets
 
